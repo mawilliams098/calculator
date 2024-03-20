@@ -27,6 +27,7 @@ const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
 let buttons = buttonContainer.querySelectorAll("button");
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].textContent = buttonText[i];
+    buttons[i].setAttribute("id", buttonText[i]);
 }
 
 function add(a, b) {
