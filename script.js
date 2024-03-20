@@ -3,6 +3,10 @@ let secondNum;
 let operator;
 let displayValue;
 
+const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
+                "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "=",
+                "ON/C", "0", ".", "blank"];
+
 buttonContainer = document.querySelector("#button-container")
 // There are 6 rows of buttons on the TI-108, each with 4 buttons
 for (let i = 0; i < 6; i++) {
@@ -19,10 +23,6 @@ for (let i = 0; i < 6; i++) {
         row.appendChild(button);
     }
 }
-
-const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
-                "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "=",
-                "ON/C", "0", ".", "blank"];
 
 let buttons = buttonContainer.querySelectorAll("button");
 for (let i = 0; i < buttons.length; i++) {
@@ -57,3 +57,5 @@ function operate(operator, firstNum, secondNum) {
         return divide(firstNum, secondNum);
     }
 }
+
+
