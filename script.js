@@ -20,6 +20,15 @@ for (let i = 0; i < 6; i++) {
     }
 }
 
+const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
+                "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "=",
+                "ON/C", "0", ".", "blank"];
+
+let buttons = buttonContainer.querySelectorAll("button");
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].textContent = buttonText[i];
+}
+
 function add(a, b) {
     return a + b;
 }

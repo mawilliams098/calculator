@@ -26,10 +26,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* gap: 10px; */
 }
 
 #button-container button {
-    height:50px;
+    height:35px;
     width: 50px;
+    margin: 5px;
 }
