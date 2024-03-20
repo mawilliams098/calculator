@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 10%;
+}
+
+#calculator {
+    height: 500px;
+    width: 350px;
+    border-style: solid;
+}
+
+#calculator #head {
+    /* height is roughly 1/3 of entire calculator */
+    height: 150px;  
+    background-color: lightblue;
+}
+
+#calculator #body {
+    padding:10px;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+}
+
+#button-container button {
+    height:50px;
+    width: 50px;
+}
