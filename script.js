@@ -3,6 +3,7 @@ let secondNum;
 let operator;
 let displayValue;
 
+
 function add(a, b) {
     return a + b;
 }
