@@ -1,11 +1,20 @@
 let firstNum;
 let secondNum;
 let operator;
-let displayValue;
+let displayValue = "";
 
 const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
                 "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "=",
                 "ON/C", "0", ".", "blank"];
+
+let screen = document.querySelector("#screen");
+window.addEventListener("click", (event) => {
+    let buttonName = event.target.id;
+    if (buttonName >= "0" && buttonName <= "9") {
+        displayValue += buttonName;
+    } 
+    screen.textContent = displayValue;
+})
 
 buttonContainer = document.querySelector("#button-container")
 // There are 6 rows of buttons on the TI-108, each with 4 buttons
@@ -57,5 +66,7 @@ function operate(operator, firstNum, secondNum) {
         return divide(firstNum, secondNum);
     }
 }
+
+
 
 
