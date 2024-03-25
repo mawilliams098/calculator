@@ -62,8 +62,10 @@ window.addEventListener("click", (event) => {
             // Put clear function here once it's done
         }
         secondNum = displayValue;
-        firstNum = operate(operator, +firstNum, +secondNum).toString();
-        screen.textContent = firstNum;
+        let res = operate(operator, +firstNum, +secondNum).toString();
+        displayValue = res;
+        screen.textContent = displayValue;
+        operator = "";
         secondNum = "";
     }
 })

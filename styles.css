@@ -28,11 +28,11 @@ body {
 }
 
 #screen {
-    height: 50px;
-    width: 300px;
+    height: 40px;
+    width: 275px;
     background-color: white;
     border-style: solid;
-
+    margin-bottom: 16%;
 }
 
 #calculator #body {
