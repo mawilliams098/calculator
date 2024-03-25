@@ -6,7 +6,7 @@ let operator = "";
 const buttonText = ["+/-", "sqrt", "%", "div", "MRC", "M-", "M+", "X",
                 "7", "8", "9", "-", "4", "5", "6", "+", "1", "2", "3", "=",
                 "ON/C", "0", ".", "blank"];
-const operators = ["X", "-", "+", "/"]
+const operators = ["X", "-", "+", "div"]
 
 buttonContainer = document.querySelector("#button-container")
 // There are 6 rows of buttons on the TI-108, each with 4 buttons
@@ -38,29 +38,24 @@ window.addEventListener("click", (event) => {
         displayValue += buttonName;
         screen.textContent = displayValue;
     } else if (operators.includes(buttonName)) {
-        // If this is an operator stacked on top of a preceding operator
+        // If this is not the first operator in our operation
         if (operator !== "") {
-            // Save the second number 
             secondNum = displayValue;
-            // Calculate the result of the first operation 
-            let res = operate(operator, +firstNum, +secondNum);
-            // Save that under the first number
-            firstNum = res.toString();
-            // Display the result 
+            firstNum = operate(operator, +firstNum, +secondNum).toString();
             screen.textContent = firstNum;
         } else {
-            // If this is the first operator we've seen, lock in the first num
             firstNum = displayValue;
         }
-        // Update the operator 
         operator = buttonName;
-        // Clear out display value for second number to be typed 
         displayValue = "";
     } else if (buttonName === "=") {
+        if (firstNum == "" || operator == "") {
+            alert("Hey! You can't do that!")
+            // Put clear function here once it's done
+        }
         secondNum = displayValue;
-        let res = operate(operator, +firstNum, +secondNum);
-        screen.textContent = res.toString();
-        firstNum = res.toString();
+        firstNum = operate(operator, +firstNum, +secondNum).toString();
+        screen.textContent = firstNum;
         secondNum = "";
     }
 })
@@ -88,7 +83,7 @@ function operate(operator, firstNum, secondNum) {
         return subtract(firstNum, secondNum);
     } else if (operator == "X") {
         return multiply(firstNum, secondNum);
-    } else if (operator == "/") {
+    } else if (operator == "div") {
         return divide(firstNum, secondNum);
     }
 }
