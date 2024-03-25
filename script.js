@@ -59,7 +59,7 @@ window.addEventListener("click", (event) => {
     } else if (buttonName === "=") {
         secondNum = displayValue;
         let res = operate(operator, +firstNum, +secondNum);
-        screen.textContent = res;
+        screen.textContent = res.toString();
         firstNum = res.toString();
         secondNum = "";
     }
@@ -86,7 +86,7 @@ function operate(operator, firstNum, secondNum) {
         return add(firstNum, secondNum);
     } else if (operator == "-") {
         return subtract(firstNum, secondNum);
-    } else if (operator == "*") {
+    } else if (operator == "X") {
         return multiply(firstNum, secondNum);
     } else if (operator == "/") {
         return divide(firstNum, secondNum);
