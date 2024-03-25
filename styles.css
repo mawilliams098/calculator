@@ -1,3 +1,9 @@
+/* 
+blue body: #095598
+dark blue border / text: #075294
+red buttons: #C42833
+*/
+
 body {
     display: flex;
     justify-content: center;

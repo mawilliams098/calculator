@@ -32,8 +32,16 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 let screen = document.querySelector("#screen");
+screen.textContent = "0"
 window.addEventListener("click", (event) => {
     let buttonName = event.target.id;  
+    if (buttonName === "ON/C") {
+        firstNum = "";
+        secondNum = "";
+        operator = "";
+        displayValue = "";
+        screen.textContent = 0;
+    }
     if (buttonName >= "0" && buttonName <= "9") {
         displayValue += buttonName;
         screen.textContent = displayValue;
@@ -84,7 +92,11 @@ function operate(operator, firstNum, secondNum) {
     } else if (operator == "X") {
         return multiply(firstNum, secondNum);
     } else if (operator == "div") {
-        return divide(firstNum, secondNum);
+        if (secondNum === 0) {
+            alert("No! Division by zero bad!")
+        } else {
+            return divide(firstNum, secondNum);
+        }
     }
 }
 
